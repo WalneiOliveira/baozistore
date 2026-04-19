@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto incremento
     private Long id;
 
     @Column(nullable = false)

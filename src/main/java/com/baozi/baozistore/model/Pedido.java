@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Pedido {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto incremento
     private Long id;
 
     @Column(nullable = false)
