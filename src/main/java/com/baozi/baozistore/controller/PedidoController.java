@@ -22,7 +22,7 @@ public class PedidoController {
         return pedidoRepository.save(pedido);
     }
 
-    // GET /pedidos | Retorna todos os produtos
+    // GET /pedidos | Retorna todos os pedidos
     @GetMapping
     public List<Pedido> listaTodos() {
         return pedidoRepository.findAll();
