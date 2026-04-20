@@ -28,7 +28,7 @@ public class PedidoController {
         return pedidoRepository.findAll();
     }
 
-    // GET /pedidos/{id} → Buscar pedido por ID
+    // GET /pedidos/{id} | Buscar pedido por ID
     @GetMapping("/{id}")
     public ResponseEntity<Pedido> buscarPorId(@PathVariable Long id) {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
@@ -36,7 +36,18 @@ public class PedidoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // DELETE /pedidos/{id} → Apagar pedido por ID
+    // PUT /pedidos/{id} | Atualizar pedido por ID
+    @PutMapping("/{id}")
+    public ResponseEntity<Pedido> atualizar(@PathVariable Long id, @RequestBody Pedido pedidoAtualizado) {
+        if (!pedidoRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        pedidoAtualizado.setId(id);
+        Pedido salvo = pedidoRepository.save(pedidoAtualizado);
+        return ResponseEntity.ok(salvo);
+    }
+
+    // DELETE /pedidos/{id} | Apagar pedido por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> apagar(@PathVariable Long id) {
         if (!pedidoRepository.existsById(id)) {
