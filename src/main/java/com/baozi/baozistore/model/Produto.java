@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity // Marca esta classe como entidade JPA (tabela)
 @Table(name = "produto") // Nome da tabela no banco
 public class Produto {

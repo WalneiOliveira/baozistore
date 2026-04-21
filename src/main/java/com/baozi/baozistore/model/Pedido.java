@@ -2,6 +2,7 @@ package com.baozi.baozistore.model;
 
 import jakarta.persistence.*;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Table(name = "pedido")
 public class Pedido {

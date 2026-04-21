@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Table(name = "cliente")
 public class Cliente {
